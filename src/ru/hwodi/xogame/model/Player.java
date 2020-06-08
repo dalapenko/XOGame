@@ -1,4 +1,4 @@
-package ru.hwodi.boardgame.model;
+package ru.hwodi.xogame.model;
 
 public class Player {
     private String name;

@@ -1,5 +1,6 @@
-package ru.hwodi.boardgame.model;
+package ru.hwodi.xogame.model;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -13,7 +14,7 @@ public class GameTest {
         Game game = new Game(expectedPlayers, null, null);
         Player[] actualPlayers = game.getPlayers();
 
-        assertEquals(expectedPlayers, actualPlayers);
+        Assert.assertEquals(expectedPlayers, actualPlayers);
     }
 
     @Test
