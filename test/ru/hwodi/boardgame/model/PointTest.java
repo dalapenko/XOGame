@@ -6,14 +6,23 @@ import static org.junit.Assert.*;
 
 public class PointTest {
 
-    Point point = new Point(5, 3);
-
     @Test
     public void getX() {
+        int expectedX = 5;
 
+        Point point = new Point(expectedX, 3);
+        int actualX = point.getX();
+
+        assertEquals(expectedX, actualX);
     }
 
     @Test
     public void getY() {
+        int expectedY = 5;
+
+        Point point = new Point(3, expectedY);
+        int actualY = point.getY();
+
+        assertEquals(expectedY, actualY);
     }
 }
