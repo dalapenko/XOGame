@@ -26,6 +26,6 @@ public class Field {
     }
 
     private boolean isCoordinateValid(int coordinate) {
-        return (coordinate < this.FIELD_SIZE && coordinate >= this.MIN_COORDINATE)
+        return (coordinate < this.FIELD_SIZE && coordinate >= this.MIN_COORDINATE);
     }
 }
