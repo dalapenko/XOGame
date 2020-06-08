@@ -2,7 +2,6 @@ package ru.hwodi.xogame.model;
 
 import org.junit.Test;
 import ru.hwodi.xogame.model.exceptions.AbstractXOException;
-import ru.hwodi.xogame.model.exceptions.AlreadyOccupiedException;
 import ru.hwodi.xogame.model.exceptions.InvalidePointException;
 
 import static org.junit.Assert.*;
