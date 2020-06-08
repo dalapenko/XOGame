@@ -15,5 +15,8 @@ public class Main {
         Game game = new Game(players, new Field(), gameName);
         ConsoleView view = new ConsoleView();
         view.show(game);
+        while (view.move(game)) {
+            view.show(game);
+        }
     }
 }
