@@ -1,5 +1,6 @@
 package ru.hwodi.xogame.model;
 
+import ru.hwodi.xogame.model.exceptions.AlreadyOccupiedException;
 import ru.hwodi.xogame.model.exceptions.InvalidePointException;
 
 public class Field {
@@ -16,9 +17,12 @@ public class Field {
         return this.field[point.getX()][point.getY()];
     }
 
-    public void setFigure(Point point, Figure figure) throws InvalidePointException {
+    public void setFigure(Point point, Figure figure) throws InvalidePointException, AlreadyOccupiedException {
         if (!isPointValid(point)) {
             throw new InvalidePointException();
+        }
+        if (this.getFigure(point) != null) {
+            throw new AlreadyOccupiedException();
         }
         this.field[point.getX()][point.getY()] = figure;
     }
