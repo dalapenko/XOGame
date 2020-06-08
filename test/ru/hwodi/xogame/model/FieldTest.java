@@ -10,9 +10,9 @@ public class FieldTest {
     public void getSize() {
         int expectedSize = 3;
         Field field = new Field();
-        int actialSize = field.getSize();
+        int actualSize = field.getSize();
 
-        assertEquals(expectedSize, actialSize);
+        assertEquals(expectedSize, actualSize);
     }
 
     @Test
