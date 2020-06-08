@@ -13,7 +13,10 @@ public class Field {
         return this.FIELD_SIZE;
     }
 
-    public Figure getFigure(Point point) {
+    public Figure getFigure(Point point) throws InvalidePointException {
+        if (!isPointValid(point)) {
+            throw new InvalidePointException();
+        }
         return this.field[point.getX()][point.getY()];
     }
 
