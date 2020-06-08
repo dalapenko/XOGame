@@ -2,6 +2,8 @@ package ru.hwodi.xogame.model;
 
 public class Field {
     private final int FIELD_SIZE = 3;
+    private final int MIN_COORDINATE = 0;
+
     private Figure[][] field = new Figure[FIELD_SIZE][FIELD_SIZE];
 
     public int getSize() {
@@ -14,5 +16,16 @@ public class Field {
 
     public void setFigure(Point point, Figure figure) {
         this.field[point.getX()][point.getY()] = figure;
+    }
+
+    private boolean isPointValid(Point point) {
+        int x = point.getX();
+        int y = point.getY();
+
+        return (isCoordinateValid(x) && isCoordinateValid(y));
+    }
+
+    private boolean isCoordinateValid(int coordinate) {
+        return (coordinate < this.FIELD_SIZE && coordinate >= this.MIN_COORDINATE)
     }
 }
