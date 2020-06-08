@@ -8,7 +8,6 @@ import ru.hwodi.xogame.model.exceptions.InvalidePointException;
 public class CurrentMoveController {
 
     public Figure currentMove(final Field field) {
-
         int countFigure = 0;
         int fieldSize = field.getSize();
         int countCell = fieldSize * fieldSize;
