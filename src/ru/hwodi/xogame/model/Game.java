@@ -1,6 +1,9 @@
 package ru.hwodi.xogame.model;
 
-public class Game {
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class Game implements Iterable<Player>{
     private Player[] players;
     private Field field;
     private String name;
@@ -21,5 +24,10 @@ public class Game {
 
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public Iterator<Player> iterator() {
+        return Arrays.asList(players).iterator();
     }
 }

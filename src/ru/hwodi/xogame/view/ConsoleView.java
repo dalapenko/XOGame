@@ -3,10 +3,7 @@ package ru.hwodi.xogame.view;
 import ru.hwodi.xogame.controllers.CurrentMoveController;
 import ru.hwodi.xogame.controllers.MoveController;
 import ru.hwodi.xogame.controllers.WinnerController;
-import ru.hwodi.xogame.model.Field;
-import ru.hwodi.xogame.model.Figure;
-import ru.hwodi.xogame.model.Game;
-import ru.hwodi.xogame.model.Point;
+import ru.hwodi.xogame.model.*;
 import ru.hwodi.xogame.model.exceptions.AlreadyOccupiedException;
 import ru.hwodi.xogame.model.exceptions.InvalidePointException;
 
@@ -21,6 +18,7 @@ public class ConsoleView {
     public void show(Game game) {
         Field field = game.getField();
         int fieldSize = field.getSize();
+        printPlayersInfo(game);
         for (int i = 0; i < fieldSize; i++) {
             printline(field, i);
             if (i != (fieldSize - 1)) printRowSeparator();
@@ -87,5 +85,15 @@ public class ConsoleView {
             System.out.print("----");
         }
         System.out.println();
+    }
+
+    private void printPlayersInfo(Game game) {
+        for (Player player: game) {
+            printPlayerInfo(player);
+        }
+    }
+
+    private void printPlayerInfo(Player player) {
+        System.out.format("Player name: %s, figure is %s\n", player.getName(), player.getFigure());
     }
 }
